@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koshex_assignment/screeens/home/widgets/explore_investment_card.dart';
+import 'package:koshex_assignment/screeens/home/widgets/explore_more.dart';
 import 'package:koshex_assignment/screeens/home/widgets/gold_investment_card.dart';
 import 'package:koshex_assignment/screeens/home/widgets/investment_overview_card.dart';
 import 'package:koshex_assignment/screeens/home/widgets/live_market_index_card.dart';
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 investmentOverviewCard(),
                 goldinvestmentCard(),
                 exploreInvestmentCard(),
+                exploreMoreCard(),
                 personalAICard(),
               ],
             ),

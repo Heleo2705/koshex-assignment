@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:koshex_assignment/constants/color_constants.dart';
+import 'package:koshex_assignment/constants/text_styke_constants.dart';
+
+import '../../../constants/border_constants.dart';
 
 exploreMoreCard() {
   return Padding(
@@ -8,15 +12,18 @@ exploreMoreCard() {
       height: 140.h,
       width: 330.w,
       decoration: BoxDecoration(
-        border: Border.all(width: 2),
-      ),
+          border: BorderConstants.outerBorder(), color: ColorConstants.grey),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5.w),
             child: Row(
               children: [
-                Text("Explore more"),
+                Text(
+                  "Explore more",
+                  style: TextStyleConstants.smallText(
+                      color: ColorConstants.lightGold),
+                ),
                 Expanded(child: SizedBox()),
                 TextButton(
                   onPressed: () {},
@@ -32,21 +39,30 @@ exploreMoreCard() {
                 Container(
                   width: 140.w,
                   height: 60.w,
-                  color: Colors.lightBlueAccent,
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Text("Mutual Funds"),
-                          Expanded(child: SizedBox()),
-                          Icon(Icons.arrow_forward),
-                        ],
-                      ),
-                      Text(
-                        "Lorem ipsum solor dolor amore fato",
-                        style: TextStyle(fontSize: 10),
-                      ),
-                    ],
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: ColorConstants.lightGrey,
+                  ),
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Mutual Funds",
+                              style: TextStyleConstants.smallText(),
+                            ),
+                            Expanded(child: SizedBox()),
+                            Icon(Icons.arrow_forward),
+                          ],
+                        ),
+                        Text("Lorem ipsum solor dolor amore fato",
+                            style: TextStyleConstants.smallText(
+                                color: ColorConstants.offWhite)),
+                      ],
+                    ),
                   ),
                 )
             ],

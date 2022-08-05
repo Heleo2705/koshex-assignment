@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:koshex_assignment/constants/color_constants.dart';
+import 'package:koshex_assignment/constants/text_styke_constants.dart';
+
+import '../../../constants/border_constants.dart';
 
 networthCard() {
   return Container(
@@ -8,7 +12,7 @@ networthCard() {
       child: _networthCardDetails(),
     ),
     decoration: BoxDecoration(
-      color: Colors.black,
+      color: ColorConstants.grey,
       borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(30),
         bottomRight: Radius.circular(30),
@@ -20,8 +24,9 @@ networthCard() {
 Container _networthCardDetails() {
   return Container(
     decoration: BoxDecoration(
-      border: Border.all(width: 2),
-      color: Colors.white,
+      border: BorderConstants.outerBorder(),
+      borderRadius: BorderRadius.circular(5),
+      color: ColorConstants.lightGrey,
     ),
     height: 110.h,
     width: 310.w,
@@ -29,6 +34,9 @@ Container _networthCardDetails() {
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
       child: Column(
         children: [
+          SizedBox(
+            height: 10.h,
+          ),
           _insightRow(),
           Divider(),
           Row(
@@ -37,8 +45,14 @@ Container _networthCardDetails() {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Track your net worth"),
-                  Text("in real time"),
+                  Text(
+                    "Track your net worth",
+                    style: TextStyleConstants.smallText(),
+                  ),
+                  Text(
+                    "in real time",
+                    style: TextStyleConstants.smallText(),
+                  ),
                 ],
               ),
               SizedBox(
@@ -49,8 +63,16 @@ Container _networthCardDetails() {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Assets"),
-                      Text("Rs 34.4L"),
+                      Text(
+                        "Assets",
+                        style: TextStyleConstants.smallText(),
+                      ),
+                      Text(
+                        "34.4L",
+                        style: TextStyleConstants.h1Text(
+                          color: ColorConstants.lightGold,
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -59,8 +81,15 @@ Container _networthCardDetails() {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Liabilities"),
-                      Text("NA"),
+                      Text(
+                        "Liabilities",
+                        style: TextStyleConstants.smallText(),
+                      ),
+                      Text(
+                        "NA",
+                        style: TextStyleConstants.h1Text(
+                            color: ColorConstants.redAccent),
+                      ),
                     ],
                   ),
                 ],
@@ -80,8 +109,15 @@ Row _insightRow() {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Insight of"),
-          Text("Your Network"),
+          Text(
+            "Insight of",
+            style:
+                TextStyleConstants.smallText(color: ColorConstants.lightGold),
+          ),
+          Text(
+            "Your Network",
+            style: TextStyleConstants.smallText(),
+          ),
         ],
       ),
       SizedBox(
@@ -91,7 +127,7 @@ Row _insightRow() {
         children: [
           Text(
             "Rs 34.4",
-            style: TextStyle(fontSize: 24.sp),
+            style: TextStyleConstants.h1Text(),
           ),
           SizedBox(
             width: 10.h,
@@ -99,8 +135,15 @@ Row _insightRow() {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Lakhs"),
-              Text("2.32"),
+              Text(
+                "Lakhs",
+                style: TextStyleConstants.extraSmallText(),
+              ),
+              Text(
+                "2.32",
+                style: TextStyleConstants.extraSmallText(
+                    color: Colors.greenAccent),
+              ),
             ],
           ),
         ],
